@@ -12,7 +12,6 @@ describe("TextInput", () => {
     const input = wrapper.find("[data-test='text-input']");
     input.setValue("Shahrokh");
     input.setValue("elmi");
-    console.log(wrapper.emitted());
     const message = wrapper.emitted()["update:modelValue"];
     expect(message).toEqual([["Shahrokh"], ["elmi"]]);
   });

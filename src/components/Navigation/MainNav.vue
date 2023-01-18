@@ -4,9 +4,12 @@
       <div
         class="flex flex-nowrap h-full mx-auto px-8 border-b border-solid border-brand-gray-1"
       >
-        <a href="/public" class="text-xl h-full flex items-center">
-          {{ company }}</a
+        <router-link
+          :to="{ name: 'Home' }"
+          class="text-xl h-full flex items-center"
         >
+          {{ company }}
+        </router-link>
         <nav class="h-full ml-12">
           <ul class="flex h-full list-none">
             <li
