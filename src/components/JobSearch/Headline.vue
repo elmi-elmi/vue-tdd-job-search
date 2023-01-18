@@ -1,11 +1,14 @@
 <template>
-  <section>
-    <h1 class="font-bold tracking-tighter text-8xl" data-test="action-phrase">
+  <section class="mb-16">
+    <h1
+      class="font-bold tracking-tighter text-8xl mb-14"
+      data-test="action-phrase"
+    >
       <span :class="actionClass">{{ action }}</span
       ><br />
       for everyone
     </h1>
-    <h2 class="text-3xl font=light">Find your job at Bobo Corp.</h2>
+    <h2 class="text-3xl font-light">Find your job at Bobo Corp.</h2>
   </section>
 </template>
 <script>

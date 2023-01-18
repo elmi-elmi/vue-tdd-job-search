@@ -1,13 +1,13 @@
 import { mount } from "@vue/test-utils";
 import { nextTick } from "vue";
-import Headline from "@/components/Headline";
+import Headline from "@/components/JobSearch/Headline";
 
 describe("Headline", () => {
-  // it("displays introductory action verb", () => {
-  //   const wrapper = mount(Headline);
-  //   const actionPhrase = wrapper.find("[data-test='action-phrase']");
-  //   expect(actionPhrase.text()).toBe("Build for everyone");
-  // });
+  it("displays introductory action verb", () => {
+    const wrapper = mount(Headline);
+    const actionPhrase = wrapper.find("[data-test='action-phrase']");
+    expect(actionPhrase.text()).toBe("Build for everyone");
+  });
 
   it("changes action phrase in a consistent interval", () => {
     jest.useFakeTimers();

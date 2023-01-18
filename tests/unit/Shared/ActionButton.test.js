@@ -1,6 +1,5 @@
 import { mount } from "@vue/test-utils";
-import ActionButton from "@/components/ActionButton";
-import { expectedError } from "@babel/core/lib/errors/rewrite-stack-trace";
+import ActionButton from "@/components/Shared/ActionButton";
 
 describe("action button", () => {
   const text = "action button text";

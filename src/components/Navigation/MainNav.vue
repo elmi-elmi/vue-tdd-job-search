@@ -4,7 +4,9 @@
       <div
         class="flex flex-nowrap h-full mx-auto px-8 border-b border-solid border-brand-gray-1"
       >
-        <a href="/" class="text-xl h-full flex items-center">{{ company }}</a>
+        <a href="/public" class="text-xl h-full flex items-center">
+          {{ company }}</a
+        >
         <nav class="h-full ml-12">
           <ul class="flex h-full list-none">
             <li
@@ -37,9 +39,9 @@
 </template>
 
 <script>
-import ActionButton from "@/components/ActionButton";
-import ProfileImage from "@/components/ProfileImage";
-import SubNav from "@/components/SubNav";
+import ActionButton from "@/components/Shared/ActionButton";
+import ProfileImage from "@/components/Navigation/ProfileImage";
+import SubNav from "@/components/Navigation/SubNav";
 export default {
   name: "MainNav",
   components: { ActionButton, ProfileImage, SubNav },
