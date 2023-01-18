@@ -1,5 +1,5 @@
 <template>
-  <header class="w-dull text-sm font-semibold">
+  <header :class="['w-full', 'text-sm', 'font-semibold', headerHeightClass]">
     <div class="fixed w-full left-0 top-0 h-16 bg-white">
       <div
         class="flex flex-nowrap h-full mx-auto px-8 border-b border-solid border-brand-gray-1"
@@ -22,9 +22,16 @@
 
         <div class="ml-auto h-full flex items-center">
           <ProfileImage v-if="isLoggedIn" data-test="profile-image" />
-          <ActionButton v-else data-test="login-button" @click="loginUser" />
+          <ActionButton
+            v-else
+            text="Sign in"
+            type="primary"
+            data-test="login-button"
+            @click="loginUser"
+          />
         </div>
       </div>
+      <SubNav v-if="isLoggedIn" data-test="sub-nav" />
     </div>
   </header>
 </template>
@@ -32,9 +39,10 @@
 <script>
 import ActionButton from "@/components/ActionButton";
 import ProfileImage from "@/components/ProfileImage";
+import SubNav from "@/components/SubNav";
 export default {
   name: "MainNav",
-  components: { ActionButton, ProfileImage },
+  components: { ActionButton, ProfileImage, SubNav },
   data() {
     return {
       company: "Bobo Careers",
@@ -48,6 +56,14 @@ export default {
       ],
       isLoggedIn: false,
     };
+  },
+  computed: {
+    headerHeightClass() {
+      return {
+        "h-16": !this.isLoggedIn,
+        "h-32": this.isLoggedIn,
+      };
+    },
   },
   methods: {
     loginUser() {
