@@ -1,8 +1,14 @@
 <template>
-  <h1>Job Result View</h1>
+  <div class="flex flex-row flex-nowrap w-full">
+    <JobFilterSidebar />
+    <JobListings />
+  </div>
 </template>
 <script>
+import JobFilterSidebar from "@/components/JobResults/JobFilterSidebar/JobFilterSidebar";
+import JobListings from "@/components/JobResults/JobListings";
 export default {
   name: "JobResultView",
+  components: { JobFilterSidebar, JobListings },
 };
 </script>
