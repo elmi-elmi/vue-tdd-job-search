@@ -35,7 +35,7 @@
             text="Sign in"
             type="primary"
             data-test="login-button"
-            @click="loginUser"
+            @click="LOGIN_USER()"
           />
         </div>
       </div>
@@ -45,9 +45,12 @@
 </template>
 
 <script>
+import { mapState, mapMutations } from "vuex";
 import ActionButton from "@/components/Shared/ActionButton";
 import ProfileImage from "@/components/Navigation/ProfileImage";
 import SubNav from "@/components/Navigation/SubNav";
+import { LOGIN_USER } from "@/store";
+
 export default {
   name: "MainNav",
   components: { ActionButton, ProfileImage, SubNav },
@@ -62,7 +65,6 @@ export default {
         { text: "Student", url: "/" },
         { text: "Jobs", url: "/job/results" },
       ],
-      isLoggedIn: false,
     };
   },
   computed: {
@@ -72,11 +74,10 @@ export default {
         "h-32": this.isLoggedIn,
       };
     },
+    ...mapState(["isLoggedIn"]),
   },
   methods: {
-    loginUser() {
-      this.isLoggedIn = true;
-    },
+    ...mapMutations([LOGIN_USER]),
   },
 };
 </script>
