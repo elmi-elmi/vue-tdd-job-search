@@ -17,7 +17,7 @@
       <template #default="{ title, description, img }">
         <router-link
           class="flex flex-col mx-5 border rounded-lg w-72 bg-brand-gray-2 h-96"
-          to="/jobs/result"
+          to="/job/results"
         >
           <img :src="img" alt="job" class="object-contain" />
           <div class="h48 px-6 py-4 mt-3">
@@ -25,7 +25,7 @@
             <p class="mt-3 text-sm">{{ description }}</p>
           </div>
           <router-link
-            to="/jobs/result"
+            to="/job/results"
             class="px-6 pb-4 text-sm text-brand-blue-1"
             >See jobs
           </router-link>
