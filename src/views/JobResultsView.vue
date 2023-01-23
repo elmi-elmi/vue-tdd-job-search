@@ -5,7 +5,7 @@
   </div>
 </template>
 <script>
-import JobFilterSidebar from "@/components/JobResults/JobFilterSidebar/JobFilterSidebar";
+import JobFilterSidebar from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebar";
 import JobListings from "@/components/JobResults/JobListings";
 export default {
   name: "JobResultView",

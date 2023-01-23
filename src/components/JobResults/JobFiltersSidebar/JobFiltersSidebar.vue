@@ -13,7 +13,7 @@
 </template>
 <script>
 import ActionButton from "@/components/Shared/ActionButton";
-import JobSidebarOrganization from "@/components/JobResults/JobFilterSidebar/JobSidebarOrganization";
+import JobSidebarOrganization from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganization";
 export default {
   name: "JobFilterSidebar",
   components: { ActionButton, JobSidebarOrganization },

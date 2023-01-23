@@ -1,12 +1,31 @@
-import { state, mutations, actions, RECEIVE_JOBS } from "@/store";
+import { state, getters, mutations, actions, RECEIVE_JOBS } from "@/store";
 import getJobs from "@/api/getJobs";
 jest.mock("@/api/getJobs");
+
+//==============================store==============================
 describe("state", () => {
   it("keeps track whether user is logged in", () => {
     const startingState = state();
     expect(startingState.isLoggedIn).toBe(false);
   });
 });
+//==============================getters==============================
+describe("getters", () => {
+  describe("UNIQUE_ORGANIZATIONS", () => {
+    it("returns a set of organization", () => {
+      const startingState = {
+        jobs: [
+          { organization: "Google" },
+          { organization: "Amazon" },
+          { organization: "Google" },
+        ],
+      };
+      const uniqueOrg = getters.UNIQUE_ORGANIZATIONS(startingState);
+      expect(uniqueOrg).toEqual(new Set(["Google", "Amazon"]));
+    });
+  });
+});
+//==============================mutations==============================
 describe("mutation", () => {
   it("LOGIN_USER", () => {
     const state = { isLoggedIn: false };
@@ -21,6 +40,7 @@ describe("mutation", () => {
     expect(startingState.jobs).toEqual(jobs);
   });
 });
+//==============================actions==============================
 describe("actions", () => {
   describe("FETCH_JOBS", () => {
     beforeEach(() => {
