@@ -7,6 +7,8 @@
         <h3 class="text-base">What do you want to do?</h3>
         <ActionButton text="Clear Filters" type="secondary" class="text-sm" />
       </div>
+      <SharedAccordion header="Degree" />
+      <SharedAccordion header="Job types" />
       <JobSidebarOrganization />
     </section>
   </div>
@@ -14,8 +16,9 @@
 <script>
 import ActionButton from "@/components/Shared/ActionButton";
 import JobSidebarOrganization from "@/components/JobResults/JobFiltersSidebar/JobFiltersSidebarOrganization";
+import SharedAccordion from "@/components/Shared/SharedAccordion";
 export default {
   name: "JobFilterSidebar",
-  components: { ActionButton, JobSidebarOrganization },
+  components: { SharedAccordion, ActionButton, JobSidebarOrganization },
 };
 </script>

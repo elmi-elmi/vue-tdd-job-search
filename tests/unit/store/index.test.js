@@ -8,6 +8,14 @@ describe("state", () => {
     const startingState = state();
     expect(startingState.isLoggedIn).toBe(false);
   });
+  it("stores job listings", () => {
+    const startingState = state();
+    expect(startingState.jobs).toEqual([]);
+  });
+  it("stores organizations that the users would like to filter jobs by", () => {
+    const startingState = state();
+    expect(startingState.selectedOrganizations).toEqual([]);
+  });
 });
 //==============================getters==============================
 describe("getters", () => {
@@ -38,6 +46,11 @@ describe("mutation", () => {
 
     mutations.RECEIVE_JOBS(startingState, jobs);
     expect(startingState.jobs).toEqual(jobs);
+  });
+  it("ADD_SELECTED_ORGANIZATIONS", () => {
+    const state = { selectedOrganizations: [] };
+    const organizations = ["org 1", "org 2"];
+    mutations.ADD_SELECTED_ORGANIZATIONS(state, organizations);
   });
 });
 //==============================actions==============================
